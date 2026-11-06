@@ -1,0 +1,36 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Base";
+            // | ENTER | F1   | F2 |     | F3 | F4 | F5 |   | F6  | F7 | F8 |   | F9 | F11   | F12 | PSCRN | UP    | DEL   |       | HOME   | END         |          | C_MUTE   |
+            // | `     | 1    | 2  |     | 3  | 4  | 5  |   | 6   | 7  | 8  |   | 9  | 0     | -   | =     |       | BSPC  |       | KP_NUM | KP_MULTIPLY | KP_SLASH | KP_MINUS |
+            // | SPC   |      | Q  | W   | E  |    | R  | T | Y   |    | U  | I | O  |       | P   | [     | ]     | ENTER |       | KP_N7  | KP_N8       | KP_N9    | KP_PLUS  |
+            // | CAPS  |      | A  | S   |    | D  | F  | G |     | H  | J  | K |    | L     | ;   | '     | NUBS  |               | KP_N4  | KP_N5       | KP_N6    |
+            // | SHIFT | NUBS |    | Z   | X  | C  |    | V | B   | N  |    | M | ,  | .     |     | FSLH  | SHIFT | UP    |       | KP_N1  | KP_N2       | KP_N3    | KP_ENTER |
+            // | CTRL  | GUI  |    | ALT |                  | SPC |                  | ALTGR |     | CTRL  | LEFT  | DOWN  | RIGHT | KP_N0  |             | KP_COMMA |
+            bindings = <
+                &kp RET    &kp F1    &kp F2            &kp F3  &kp F4  &kp F5         &kp F6     &kp F7  &kp F8         &kp F9     &kp F11   &kp F12    &kp PSCRN  &kp UP     &kp DEL              &kp HOME    &kp END                        &kp C_MUTE
+                &kp GRAVE  &kp N1    &kp N2            &kp N3  &kp N4  &kp N5         &kp N6     &kp N7  &kp N8         &kp N9     &kp N0    &kp MINUS  &kp EQUAL             &kp BSPC             &kp KP_NUM  &kp KP_MULTIPLY  &kp KP_SLASH  &kp KP_MINUS
+                &kp SPACE            &kp Q   &kp W     &kp E           &kp R   &kp T  &kp Y              &kp U   &kp I  &kp O                &kp P      &kp LBKT   &kp RBKT   &kp RET              &kp KP_N7   &kp KP_N8        &kp KP_N9     &kp KP_PLUS
+                &kp CAPS             &kp A   &kp S             &kp D   &kp F   &kp G             &kp H   &kp J   &kp K             &kp L     &kp SEMI   &kp SQT    &kp NUBS                        &kp KP_N4   &kp KP_N5        &kp KP_N6
+                &kp LSHFT  &kp NUBS          &kp Z     &kp X   &kp C           &kp V  &kp B      &kp N           &kp M  &kp COMMA  &kp DOT              &kp FSLH   &kp RSHFT  &kp UP               &kp KP_N1   &kp KP_N2        &kp KP_N3     &kp KP_ENTER
+                &kp LCTRL  &kp LGUI          &kp LALT                                 &kp SPACE                                    &kp RALT  &trans     &kp RCTRL  &kp LEFT   &kp DOWN  &kp RIGHT  &kp KP_N0                    &kp KP_COMMA
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        extra_1 {
+            status = "reserved";
+        };
+
+        extra_2 {
+            status = "reserved";
+        };
+    };
+};
